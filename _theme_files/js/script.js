@@ -13,7 +13,7 @@ function loadImage(e) {
   form.style.display = 'block';
   document.querySelector(
     '#filename'
-  ).innerHTML = `<strong>File: </strong>${file.name}`;
+  ).innerHTML = file.name;
 }
 
 function isFileImage(file) {

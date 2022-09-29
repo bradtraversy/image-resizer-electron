@@ -25,7 +25,7 @@ function loadImage(e) {
 
   // Show form, image name and output path
   form.style.display = 'block';
-  filename.innerHTML = `<strong>File: </strong>${img.files[0].name}`;
+  filename.innerHTML = img.files[0].name;
   outputPath.innerText = path.join(os.homedir(), 'imageresizer');
 }
 
