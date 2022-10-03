@@ -4,8 +4,6 @@ const fs = require('fs');
 const resizeImg = require('resize-img');
 const { app, BrowserWindow, Menu, ipcMain, shell } = require('electron');
 
-process.env.NODE_ENV = 'production';
-
 const isDev = process.env.NODE_ENV !== 'production';
 const isMac = process.platform === 'darwin';
 
@@ -141,7 +139,7 @@ async function resizeImage({ imgPath, height, width, dest }) {
     }
 
     // Write the file to the destination folder
-    await fs.writeFileSync(path.join(dest, filename), newPath);
+    fs.writeFileSync(path.join(dest, filename), newPath);
 
     // Send success to renderer
     mainWindow.webContents.send('image:done');
